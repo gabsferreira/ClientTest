@@ -1,1 +1,6 @@
 C:\Users\Gabriel\Projects\ClientTest\ClientTest\bin\Debug\ClientTest.exe.config
+C:\Users\Gabriel\Projects\ClientTest\ClientTest\obj\Debug\ClientTest.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\Projects\ClientTest\ClientTest\bin\Debug\ClientTest.exe
+C:\Users\Gabriel\Projects\ClientTest\ClientTest\bin\Debug\ClientTest.pdb
+C:\Users\Gabriel\Projects\ClientTest\ClientTest\obj\Debug\ClientTest.exe
+C:\Users\Gabriel\Projects\ClientTest\ClientTest\obj\Debug\ClientTest.pdb
