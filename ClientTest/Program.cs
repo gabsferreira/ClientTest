@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,19 +12,20 @@ namespace ClientTest
 {
     class Program
     {
-        static void Main(string[] args)
+        [Test]
+        public void TestaQueAConexaoComOServidorFunciona()
         {
             string conteudo;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.mocky.io/v2/52aaf5deee7ba8c70329fb7d");
-            
+
             WebResponse response = request.GetResponse();
-            using (Stream responseStream = response.GetResponseStream()) {
+            using (Stream responseStream = response.GetResponseStream())
+            {
                 StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
                 conteudo = reader.ReadToEnd();
             }
 
-            Console.WriteLine(conteudo);
-            Console.ReadLine();
+            Assert.IsTrue(conteudo.Contains("Rua Vergueiro 3185"));
         }
     }
 }
