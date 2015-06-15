@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Loja.DAO;
+using Loja.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,12 @@ namespace Loja.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public string Busca()
+        {
+            Carrinho carrinho = new CarrinhoDAO().Busca(1);
+            
         }
     }
 }

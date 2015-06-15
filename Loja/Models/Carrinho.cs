@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Loja.Models
 {
@@ -54,5 +55,12 @@ namespace Loja.Models
             }
         }
 
+        public string ToXML()
+        {
+            var stringwriter = new System.IO.StringWriter();
+            var serializer = new XmlSerializer(this.GetType());
+            serializer.Serialize(stringwriter, this);
+            return stringwriter.ToString();
+        }
     }
 }
