@@ -12,9 +12,9 @@ namespace Loja.Controllers
     public class CarrinhoController : ApiController
     {
         [HttpGet]
-        public Carrinho Busca()
+        public Carrinho Busca([FromUri] long id)
         {
-            Carrinho carrinho = new CarrinhoDAO().Busca(1);
+            Carrinho carrinho = new CarrinhoDAO().Busca(id);
             return carrinho;
         }
     }
