@@ -1,4 +1,3 @@
-C:\Users\Gabriel\Projects\ClientTest\Loja\obj\Debug\Loja.csprojResolveAssemblyReference.cache
 C:\Users\Gabriel\Projects\ClientTest\Loja\bin\Loja.dll.config
 C:\Users\Gabriel\Projects\ClientTest\Loja\bin\Loja.dll
 C:\Users\Gabriel\Projects\ClientTest\Loja\bin\Loja.pdb
@@ -30,3 +29,4 @@ C:\Users\Gabriel\Projects\ClientTest\Loja\bin\System.Web.Http.xml
 C:\Users\Gabriel\Projects\ClientTest\Loja\bin\System.Web.Http.WebHost.xml
 C:\Users\Gabriel\Projects\ClientTest\Loja\obj\Debug\Loja.dll
 C:\Users\Gabriel\Projects\ClientTest\Loja\obj\Debug\Loja.pdb
+C:\Users\Gabriel\Projects\ClientTest\Loja\obj\Debug\Loja.csprojResolveAssemblyReference.cache
