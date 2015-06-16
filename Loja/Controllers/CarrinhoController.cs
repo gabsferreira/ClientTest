@@ -17,5 +17,11 @@ namespace Loja.Controllers
             Carrinho carrinho = new CarrinhoDAO().Busca(id);
             return carrinho;
         }
+
+        [HttpPost]
+        public string Adiciona()
+        {
+            return "<status>sucesso</status";
+        }
     }
 }
