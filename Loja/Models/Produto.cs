@@ -12,6 +12,11 @@ namespace Loja.Models
         public string Nome { get; set; }
         public int Quantidade { get; set; }
 
+        public Produto()
+        {
+
+        }
+
         public Produto(long id, string nome, double preco, int quantidade)
         {
             this.Id = id;
