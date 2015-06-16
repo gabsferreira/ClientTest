@@ -16,6 +16,8 @@ namespace Loja.Models
 
         public Carrinho Adiciona(Produto produto)
         {
+            if (this.Produtos == null) this.Produtos = new List<Produto>();
+
             this.Produtos.Add(produto);
             return this;
         }
@@ -53,14 +55,6 @@ namespace Loja.Models
                     item.Quantidade = produto.Quantidade;
                 }
             }
-        }
-
-        public string ToXML()
-        {
-            var stringwriter = new System.IO.StringWriter();
-            var serializer = new XmlSerializer(this.GetType());
-            serializer.Serialize(stringwriter, this);
-            return stringwriter.ToString();
         }
     }
 }
