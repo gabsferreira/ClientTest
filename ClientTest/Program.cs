@@ -16,7 +16,7 @@ namespace ClientTest
         public void TestaQueAConexaoComOServidorFunciona()
         {
             string conteudo;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://localhost:52603/api/carrinho");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://localhost:52603/api/carrinho/1");
 
             WebResponse response = request.GetResponse();
             using (Stream responseStream = response.GetResponseStream())
