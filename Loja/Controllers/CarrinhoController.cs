@@ -27,7 +27,7 @@ namespace Loja.Controllers
             StringReader StrReader = new StringReader(conteudo);
             XmlSerializer serializer = new XmlSerializer(typeof(Carrinho));
             XmlTextReader XmlReader = new XmlTextReader(StrReader);
-            
+
             Carrinho objCarrinho = (Carrinho)serializer.Deserialize(XmlReader);
             XmlReader.Close();
             StrReader.Close();
@@ -35,9 +35,20 @@ namespace Loja.Controllers
             new CarrinhoDAO().Adiciona(objCarrinho);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
 
-            string uri = Url.Link("DefaultApi", new { controller="Carrinho", id = objCarrinho.Id });
+            string uri = Url.Link("DefaultApi", new { controller = "Carrinho", id = objCarrinho.Id });
             response.Headers.Location = new Uri(uri);
-            
+
+            return response;
+        }
+
+        [HttpDelete]
+        [Route("api/carrinho/{id}/produtos/{produtoId}")]
+        public HttpResponseMessage RemoveProduto([FromUri] long id, [FromUri]long produtoId)
+        {
+            Carrinho carrinho = new CarrinhoDAO().Busca(id);
+            carrinho.Remove(produtoId);
+
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
         }
     }
