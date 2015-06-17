@@ -19,16 +19,16 @@ namespace Loja.DAO
             Carrinho carrinho = new Carrinho()
                                 .Adiciona(videogame)
                                 .Adiciona(esporte)
-                                .Para("Rua Vergueiro 3185, 8 andar", "S‹o Paulo");
+                                .Para("Rua Vergueiro 3185, 8 andar", "Sao Paulo");
             carrinho.Id = 1;
             banco.Add(1, carrinho);
         }
 
         public void Adiciona(Carrinho carrinho)
         {
-            long id = contador++;
-            carrinho.Id = id;
-            banco.Add(id, carrinho);
+            contador++;
+            carrinho.Id = contador;
+            banco.Add(contador, carrinho);
         }
 
         public Carrinho Busca(long id)
