@@ -22,7 +22,7 @@ namespace Loja.Controllers
         }
 
         [HttpPost]
-        public string Adiciona([FromBody]string conteudo)
+        public HttpResponseMessage Adiciona([FromBody]string conteudo)
         {
             StringReader StrReader = new StringReader(conteudo);
             XmlSerializer serializer = new XmlSerializer(typeof(Carrinho));
@@ -33,8 +33,12 @@ namespace Loja.Controllers
             StrReader.Close();
 
             new CarrinhoDAO().Adiciona(objCarrinho);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
+
+            string uri = Url.Link("DefaultApi", new { controller="Carrinho", id = objCarrinho.Id });
+            response.Headers.Location = new Uri(uri);
             
-            return "<status>sucesso</status";
+            return response;
         }
     }
 }
