@@ -31,13 +31,9 @@ namespace Loja.Models
 
         public void Remove(long id)
         {
-            foreach (var produto in Produtos)
-            {
-                if(produto.Id == id)
-                {
-                    Produtos.Remove(produto);
-                }
-            }
+            Produto produto = Produtos.FirstOrDefault(p => p.Id == id);
+
+            Produtos.Remove(produto);
         }
 
         public void Troca(Produto produto)
