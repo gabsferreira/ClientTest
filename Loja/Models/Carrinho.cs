@@ -42,15 +42,10 @@ namespace Loja.Models
             Adiciona(produto);
         }
 
-        public void TrocaQuantidade(Produto produto)
+        public void TrocaNome(Produto produto)
         {
-            foreach (var item in Produtos)
-            {
-                if(item.Id == produto.Id)
-                {
-                    item.Quantidade = produto.Quantidade;
-                }
-            }
+            Produto produtoCarregado = Produtos.FirstOrDefault(p => p.Id == produto.Id);
+            produtoCarregado.Nome = produto.Nome;
         }
     }
 }
