@@ -63,5 +63,17 @@ namespace Loja.Controllers
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
         }
+
+        [HttpPut]
+        [Route("api/carrinho/{id}/produtos/{produtoId}/nome")]
+        public HttpResponseMessage AlteraProdutoNome([FromBody] Produto produto, [FromUri] long id, [FromUri] long produtoId)
+        {
+            Carrinho carrinho = new CarrinhoDAO().Busca(id);
+
+            carrinho.TrocaNome(produto);
+
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
+            return response;
+        }
     }
 }
