@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4126AB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja", "Loja\Loja.csproj", "{AE69FE81-768C-4062-A8C2-C2FAC95BCB2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Tests", "Loja.Tests\Loja.Tests.csproj", "{429C62D9-CDB3-435F-A839-F97D4804B160}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{AE69FE81-768C-4062-A8C2-C2FAC95BCB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE69FE81-768C-4062-A8C2-C2FAC95BCB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE69FE81-768C-4062-A8C2-C2FAC95BCB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{429C62D9-CDB3-435F-A839-F97D4804B160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{429C62D9-CDB3-435F-A839-F97D4804B160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{429C62D9-CDB3-435F-A839-F97D4804B160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{429C62D9-CDB3-435F-A839-F97D4804B160}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

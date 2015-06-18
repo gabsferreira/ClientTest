@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\Gabriel\Projects\ClientTest\ClientTest\bin\Debug\ClientTest.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-06-15" time="16:41:47">
+<test-results name="C:\Users\Gabriel\Projects\ClientTest\ClientTest\bin\Debug\ClientTest.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-06-16" time="17:18:23">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="GABRIEL" user="Gabriel" user-domain="GABRIEL" />
   <culture-info current-culture="pt-BR" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\Users\Gabriel\Projects\ClientTest\ClientTest\bin\Debug\ClientTest.dll" executed="True" result="Success" success="True" time="1.785" asserts="0">
+  <test-suite type="Assembly" name="C:\Users\Gabriel\Projects\ClientTest\ClientTest\bin\Debug\ClientTest.dll" executed="True" result="Success" success="True" time="0.398" asserts="0">
     <results>
-      <test-suite type="Namespace" name="ClientTest" executed="True" result="Success" success="True" time="1.774" asserts="0">
+      <test-suite type="Namespace" name="ClientTest" executed="True" result="Success" success="True" time="0.388" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="Program" executed="True" result="Success" success="True" time="1.772" asserts="0">
+          <test-suite type="TestFixture" name="Program" executed="True" result="Success" success="True" time="0.386" asserts="0">
             <results>
-              <test-case name="ClientTest.Program.TestaQueAConexaoComOServidorFunciona" executed="True" result="Success" success="True" time="1.762" asserts="1" />
+              <test-case name="ClientTest.Program.TestaQueAConexaoComOServidorFunciona" executed="True" result="Success" success="True" time="0.377" asserts="1" />
             </results>
           </test-suite>
         </results>
