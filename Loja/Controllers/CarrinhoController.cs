@@ -14,36 +14,34 @@ namespace Loja.Controllers
 {
     public class CarrinhoController : ApiController
     {
-        [HttpGet]
-        public Carrinho Busca(long id)
+        public HttpResponseMessage Get(long id)
         {
-            Carrinho carrinho = new CarrinhoDAO().Busca(id);
-            return carrinho;
+            try
+            {
+                Carrinho carrinho = new CarrinhoDAO().Busca(id);
+                return Request.CreateResponse(HttpStatusCode.OK, carrinho);
+            }
+            catch (KeyNotFoundException)
+            {
+                var mensagem = string.Format("Carrinho com id {0} não encontrado", id);
+                HttpError erro = new HttpError(mensagem);
+                return Request.CreateResponse(HttpStatusCode.NotFound, mensagem);
+            }
         }
 
-        [HttpPost]
-        public HttpResponseMessage Adiciona([FromBody]string conteudo)
+        public HttpResponseMessage Post([FromBody]Carrinho carrinho)
         {
-            StringReader StrReader = new StringReader(conteudo);
-            XmlSerializer serializer = new XmlSerializer(typeof(Carrinho));
-            XmlTextReader XmlReader = new XmlTextReader(StrReader);
-
-            Carrinho objCarrinho = (Carrinho)serializer.Deserialize(XmlReader);
-            XmlReader.Close();
-            StrReader.Close();
-
-            new CarrinhoDAO().Adiciona(objCarrinho);
+            new CarrinhoDAO().Adiciona(carrinho);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
 
-            string uri = Url.Link("DefaultApi", new { controller = "Carrinho", id = objCarrinho.Id });
+            string uri = Url.Link("DefaultApi", new { controller = "Carrinho", id = carrinho.Id });
             response.Headers.Location = new Uri(uri);
 
             return response;
         }
 
-        [HttpDelete]
         [Route("api/carrinho/{id}/produtos/{produtoId}")]
-        public HttpResponseMessage RemoveProduto([FromUri] long id, [FromUri]long produtoId)
+        public HttpResponseMessage Delete([FromUri] long id, [FromUri]long produtoId)
         {
             Carrinho carrinho = new CarrinhoDAO().Busca(id);
             carrinho.Remove(produtoId);
@@ -52,9 +50,8 @@ namespace Loja.Controllers
             return response;
         }
 
-        [HttpPut]
         [Route("api/carrinho/{id}/produtos/{produtoId}")]
-        public HttpResponseMessage AlteraProduto([FromBody] Produto produto, [FromUri] long id, [FromUri] long produtoId)
+        public HttpResponseMessage Put([FromBody] Produto produto, [FromUri] long id, [FromUri] long produtoId)
         {
             Carrinho carrinho = new CarrinhoDAO().Busca(id);
 
@@ -66,7 +63,7 @@ namespace Loja.Controllers
 
         [HttpPut]
         [Route("api/carrinho/{id}/produtos/{produtoId}/nome")]
-        public HttpResponseMessage AlteraProdutoNome([FromBody] Produto produto, [FromUri] long id, [FromUri] long produtoId)
+        public HttpResponseMessage AlteraNomeProduto([FromBody] Produto produto, [FromUri] long id, [FromUri] long produtoId)
         {
             Carrinho carrinho = new CarrinhoDAO().Busca(id);
 

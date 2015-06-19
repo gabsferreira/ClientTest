@@ -16,7 +16,7 @@ namespace Loja.Tests
         {
             var controller = new CarrinhoController();
 
-            var resultado = controller.Busca(1);
+            var resultado = controller.Get(1);
 
             Assert.IsNotNull(resultado);
         }
