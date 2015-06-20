@@ -19,6 +19,7 @@ namespace Loja.Controllers
             try
             {
                 Carrinho carrinho = new CarrinhoDAO().Busca(id);
+                int teste = 1;
                 return Request.CreateResponse(HttpStatusCode.OK, carrinho);
             }
             catch (KeyNotFoundException)
