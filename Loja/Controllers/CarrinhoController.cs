@@ -64,11 +64,11 @@ namespace Loja.Controllers
 
         [HttpPut]
         [Route("api/carrinho/{id}/produtos/{produtoId}/nome")]
-        public HttpResponseMessage AlteraNomeProduto([FromBody] Produto produto, [FromUri] long id, [FromUri] long produtoId)
+        public HttpResponseMessage AlteraEndereco([FromBody] string endereco, [FromUri] long id)
         {
             Carrinho carrinho = new CarrinhoDAO().Busca(id);
 
-            carrinho.TrocaNome(produto);
+            carrinho.TrocaEndereco(endereco);
 
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
             return response;

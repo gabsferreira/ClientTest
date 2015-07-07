@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using a = System.CannotUnloadAppDomainException;
 
 namespace Loja.Models
 {
@@ -23,6 +24,11 @@ namespace Loja.Models
             this.Nome = nome;
             this.Preco = preco;
             this.Quantidade = quantidade;
+        }
+
+        public void TrocaNome(string novoNome)
+        {
+
         }
     }
 }

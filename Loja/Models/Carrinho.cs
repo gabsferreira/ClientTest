@@ -10,23 +10,17 @@ namespace Loja.Models
     public class Carrinho
     {
         public List<Produto> Produtos { get; set; }
-        public string Rua { get; set; }
-        public string Cidade { get; set; }
+        public string Endereco { get; set; }
         public long Id { get; set; }
 
-        public Carrinho Adiciona(Produto produto)
+        public Carrinho()
         {
-            if (this.Produtos == null) this.Produtos = new List<Produto>();
-
-            this.Produtos.Add(produto);
-            return this;
+            this.Produtos = new List<Produto>();
         }
 
-        public Carrinho Para(string rua, string cidade)
+        public void Adiciona(Produto produto)
         {
-            this.Rua = rua;
-            this.Cidade = cidade;
-            return this;
+            this.Produtos.Add(produto);
         }
 
         public void Remove(long id)
@@ -42,10 +36,9 @@ namespace Loja.Models
             Adiciona(produto);
         }
 
-        public void TrocaNome(Produto produto)
+        public void TrocaEndereco(string endereco)
         {
-            Produto produtoCarregado = Produtos.FirstOrDefault(p => p.Id == produto.Id);
-            produtoCarregado.Nome = produto.Nome;
+            this.Endereco = endereco;
         }
     }
 }
