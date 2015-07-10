@@ -51,6 +51,7 @@ namespace Loja.Controllers
             return response;
         }
 
+        [HttpPut]
         [Route("api/carrinho/{id}/produtos/{produtoId}")]
         public HttpResponseMessage Put([FromBody] Produto produto, [FromUri] long id, [FromUri] long produtoId)
         {
@@ -64,7 +65,7 @@ namespace Loja.Controllers
 
         [HttpPut]
         [Route("api/carrinho/{id}/produtos/{produtoId}/nome")]
-        public HttpResponseMessage AlteraEndereco([FromBody] string endereco, [FromUri] long id)
+        public HttpResponseMessage Put([FromBody] string endereco, [FromUri] long id)
         {
             Carrinho carrinho = new CarrinhoDAO().Busca(id);
 
