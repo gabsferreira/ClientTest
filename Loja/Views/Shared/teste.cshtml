@@ -1,0 +1,15 @@
+﻿@model Loja.Models.Produto
+
+
+@{
+    ViewBag.Title = "teste";
+}
+
+<h2>teste</h2>
+
+
+@using(Html.BeginForm("teste", "teste", FormMethod.Post))
+{
+    Html.TextBoxFor(p => p.Nome); 
+    Html.TextBoxFor(p => p.Nome);
+}
